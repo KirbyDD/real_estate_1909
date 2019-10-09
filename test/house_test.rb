@@ -82,15 +82,12 @@ class HouseTest < Minitest::Test
   end
 
   def test_rooms_by_category_method
+    skip
     @house.add_room(@room)
     @house.add_room(@room2)
     @house.add_room(@room3)
     @house.add_room(@room4)
-    assert_equal {
-    :bedroom => [@room1, @room2],
-    :living_room => [@room3]  
-    :basement => [@room4]
-    },
-    house.rooms_by_category
+    expectedResult = { :bedroom => [@room1, @room2], :living_room => [@room3], :basement => [@room4]}
+    assert_equal expectedResult, @house.rooms_by_category
   end
 end

@@ -21,4 +21,9 @@ class House
     end
     result
   end
+
+  def sort_by_area
+    result = @rooms.sort {|a, b| b.area <=> a.area}
+    result
+  end
 end
